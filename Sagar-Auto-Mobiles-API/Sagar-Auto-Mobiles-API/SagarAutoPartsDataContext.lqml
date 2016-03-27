@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="sagar-auto-parts" EntityNamespace="SagarautopartContext" ContextNamespace="SagarautopartContext" Class="SagarautopartDataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="7c1e6241-3dca-4505-bfdc-fb9dfc236a29" Provider="Devart.Data.MySql.Linq.Provider.MySqlDataProvider, Devart.Data.MySql.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="User Id=root;Host=localhost;Database=sagar-auto-parts;Persist Security Info=True" Provider="Devart.Data.MySql" />
+  <Table Name="`sagar-auto-parts`.admin" Member="Admins">
+    <Type Name="Admin" ed:Guid="6638aef5-7b8f-442b-b4c3-8e1840e581d2">
+      <Column Name="Email" Type="System.String" DbType="VARCHAR(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="true" ed:Guid="d5505e25-b499-4071-b4f4-e05f5287a951" />
+      <Column Name="FirstName" Type="System.String" DbType="VARCHAR(30) NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="true" ed:Guid="689104da-6a13-4c35-a68a-8d0309cdf176" />
+      <Column Name="LastName" Type="System.String" DbType="VARCHAR(30) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="false" ed:Guid="719c16ff-97d6-442f-87af-eb24fc30d2f8" />
+      <Column Name="`Password`" Member="Password" Type="System.String" DbType="VARCHAR(35) NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="35" ed:ValidateMaxLength="35" ed:ValidateRequired="true" ed:Guid="103f684a-905e-45d8-8717-be9bf807a683" />
+    </Type>
+  </Table>
+</Database>

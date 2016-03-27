@@ -24,25 +24,41 @@ namespace Sagar_Auto_Mobiles_API.Utility
                 return _connection;
             }
         }
-        
-        public static DataTable ExecuteSelect(string selectQuery)
+
+        private static void OpenConnection()
         {
-            MySqlCommand cmd = new MySqlCommand(selectQuery,Connection);
             if (Connection.State != ConnectionState.Open)
             {
                 Connection.Open();
             }
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
+        }
 
+        private static void CloseConnection()
+        {
             if (Connection.State != ConnectionState.Closed)
             {
                 Connection.Close();
             }
+        }
 
+        public static DataTable ExecuteSelect(string selectQuery)
+        {
+            MySqlCommand cmd = new MySqlCommand(selectQuery,Connection);
+            OpenConnection();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            CloseConnection();
             return ds.Tables[0];
+        }
 
+        public static object ExecuteScaler(string selectQuery)
+        {
+            MySqlCommand cmd = new MySqlCommand(selectQuery, Connection);
+            OpenConnection();
+            object obj = cmd.ExecuteScalar();
+            CloseConnection();
+            return obj;
         }
 
 

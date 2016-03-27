@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Sagar_Auto_Mobiles_API.Utility;
 
 namespace Sagar_Auto_Mobiles_API.Models
 {
@@ -79,6 +80,13 @@ namespace Sagar_Auto_Mobiles_API.Models
             {
                 this._password = value;
             }
+        }
+
+        public static bool Authenticate(Admin admin)
+        {
+            
+            return true;
+
         }
     }
 }
